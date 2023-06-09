@@ -19,7 +19,7 @@ Faça as alterações necessárias e commit-as: git commit -m 'Implementação d
 Envie suas alterações para o repositório remoto: git push origin minha-nova-feature.
 Abra um pull request no repositório original.
 
-# Autor
+## Autor
 Eric Poloni Araujo
 
 ## Contato
