@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="space-y-2">
+  <h2 class="title-primary">Esqueceu sua senha?</h2>
+  <div>
+    <p class="text-sm ">Ou <span><%= link_to "entre com uma conta", new_user_session_path, class: "font-semibold hover:underline decoration-1" %></span></p>
   </div>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <div>
+      <div class="mt-1">
+        <%= f.email_field :email,
+        autofocus: true,
+        autocomplete: "email",
+        placeholder: "Digite seu email aqui",
+        class: "input-primary font-semibold" %>
+      </div>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="actions">
+      <%= f.submit "Recuperar senha", class: "button-primary" %>
+    </div>
+  <% end %>
+</div>
