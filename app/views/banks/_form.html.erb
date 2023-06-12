@@ -1,0 +1,29 @@
+<div class='px-2 py-5 sm:px-6'>
+    <%= form_for @bank, url: url, html: { class: 'space-y-6' }, data: { turbo: :false } do |f| %>
+      <div class='px-3 mb-2'>
+        <%= label_tag :title, 'Titulo', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_field :title,
+                          autofocus: true,
+                          required: true,
+                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
+                                  rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
+                                  focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+
+
+        <div class="mb-4">
+          <%= f.label :category, 'Tipo', class: "block text-gray-700 text-sm font-bold mb-2" %>
+          <%= f.select :category, { "Entrada" => :entrada, "Saida" => :saida }, { prompt: 'Selecione uma categoria' },
+            class: "select-input" %>
+        </div>
+
+         <div class="mb-4">
+    <%= f.label :amount,'Quantia', class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.number_field :amount, step: "0.01", class: "block appearance-none w-full border border-gray-300 py-2 px-3 rounded leading-tight focus:outline-none focus:border-blue-500" %>
+  </div>
+
+      <%= f.submit "Concluido", class:"button-primary" %>
+      <%= link_to "Voltar", banks_path, class:"button-primary flex" %>
+      </div>
+
+    <% end %>
+</div>
