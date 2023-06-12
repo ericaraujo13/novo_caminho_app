@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .title-primary {
+    @apply text-center mt-2 font-medium text-lg
+  }
+  .checkbox-label {
+    @apply mr-4 ml-2 block text-sm text-gray-900
+  }
+  .checkbox-primary {
+    @apply h-4 w-4 text-black focus:ring-black border-gray-300 rounded
+  }
+  .input-label-primary {
+    @apply block text-sm font-medium text-center text-black
+  }
+  .input-primary {
+    @apply w-full h-12 text-center border-black border-2 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm
+  }
+  .button-primary {
+    @apply justify-center bg-black text-white p-2 w-full rounded-lg font-semibold text-sm mt-2 hover:bg-gray-900
+  }
+  .button-secondary {
+    @apply text-gray-900 border border-gray-800 p-2 text-sm rounded-lg hover:bg-gray-100
   }
 }
-
-*/

@@ -1,0 +1,32 @@
+<div>
+  <div class='px-2 py-5 sm:px-6'>
+      <%= form_for :animal, as: :animal, url: animals_path do |f| %>
+        <div class='px-3 mb-2'>
+        <%= label_tag :name, 'Nome', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_field :name,
+                          autofocus: true,
+                          required: true,
+                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
+                                  rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
+                                  focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+
+
+        <%= f.label :race, 'Raca', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_field :race,
+                        autofocus: true,
+                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
+                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
+                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+
+        <%= f.label :description, 'Descricao', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_area :description,
+                        autofocus: true,
+                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
+                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
+                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+
+        <%= f.submit "Concluido", class:"button-primary" %>
+        <%= link_to "Voltar", animals_path, class:"button-primary flex" %>
+      <% end %>
+  </div>
+</div>
