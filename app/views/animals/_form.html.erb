@@ -1,17 +1,14 @@
-<div>
-  <div class='px-2 py-5 sm:px-6'>
-      <%= form_for :animal, as: :animal, url: animals_path do |f| %>
-        <div class='px-3 mb-2'>
-        <%= label_tag :name, 'Nome', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+<%= form_for @animal, url: url, data: { turbo: :false } do |f| %>
+  <div class="flex justify-between items-center">
+    <div class="p-8 w-2/3 mx-auto">
+      <%= label_tag :name, 'Nome', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
         <%= f.text_field :name,
                           autofocus: true,
                           required: true,
                           class: 'appearance-none block w-full px-3 py-2 border border-gray-300
                                   rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
                                   focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
-
-
-        <%= f.label :race, 'Raca', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+                                  <%= f.label :race, 'Raca', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
         <%= f.text_field :race,
                         autofocus: true,
                           class: 'appearance-none block w-full px-3 py-2 border border-gray-300
@@ -25,8 +22,44 @@
                           rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
                           focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
 
+        <%= f.label :comment, 'Oberservações', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_area :comment,
+                        autofocus: true,
+                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
+                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
+                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+
+        <%= f.label :photo, "Adicione uma foto", class: "block text-sm font-medium mb-2 ml-1 text-gray-700"%>
+        <%= f.file_field :photo, class:"mr-auto border border-gray-300 rounded-lg p-2 w-full mb-2", data: { target: "image-preview.input", action: "image-preview#readURL" } %>
+
         <%= f.submit "Concluido", class:"button-primary" %>
-        <%= link_to "Voltar", animals_path, class:"button-primary flex" %>
-      <% end %>
-  </div>
-</div>
+        <% if @animal.id.present? %>
+          <%= link_to "Voltar", animal_path, class:"button-primary flex" %>
+        <% else %>
+          <%= link_to "Voltar", animals_path, class:"button-primary flex" %>
+        <% end %>
+    </div>
+    <div class="mx-auto p-8">
+      <h1 class="text-center text-gray-700 font-bold text-xl mb-2">Foto selecionada</h1>
+      <div data-controller="image-preview">
+          <%= image_tag('cachorro-sem-foto.png', class: "w-full h-96 rounded-lg", data: { target: "image-preview.output" }) %>
+      </div>
+    </div>
+<% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector("[data-target='image-preview.input']");
+    const img = document.querySelector("[data-target='image-preview.output']");
+
+    input.addEventListener("change", function() {
+      if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          img.setAttribute("src", e.target.result);
+        };
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+  });
+</script>

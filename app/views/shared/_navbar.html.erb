@@ -1,8 +1,8 @@
 
 <nav class="bg-red-500 border-red-200">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="https://flowbite.com/" class="flex items-center">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Novo Caminho</span>
+  <a class="flex items-center">
+    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Novo Caminho</span>
   </a>
   <div class="flex md:order-2">
       <%= link_to "Sair", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-secondary bg-white font-bold w-26" %>
@@ -23,7 +23,7 @@
         <a><%= link_to "Medicamentos", medicines_path, class: "p-2 hover:bg-red-500 rounded-lg hover:text-white" %></a>
       </li>
       <li>
-        <a class="p-2 hover:bg-red-500 rounded-lg hover:text-white">Adocao</a>
+        <a><%= link_to "Adoção", adoptions_path, class: "p-2 hover:bg-red-500 rounded-lg hover:text-white" %></a>
       </li>
     </ul>
   </div>

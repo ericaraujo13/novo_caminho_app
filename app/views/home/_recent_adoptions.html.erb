@@ -1,53 +1,41 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
         <caption class="p-5 text-lg font-semibold text-gray-900 bg-white text-center">
-            Fluxo de Caixa
+            Adoçoes recentes
             <p class="mt-1 text-sm font-normal text-gray-500 "></p>
         </caption>
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Titulo
+                    Nome
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Tipo
+                    Adotado por:
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Data
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Quantia
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Editar</span>
+                    <span class="sr-only">Visualizar</span>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <% @recents.each do |bank| %>
+            <% @recent_adoptions.each do |animal| %>
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        <%= bank.title %>
+                        <%= animal.name %>
                     </th>
                     <td class="px-6 py-4">
-                        <%= bank.category.humanize.capitalize %>
+                        Fulano
                     </td>
                     <td class="px-6 py-4">
-                    <%= bank.created_at.strftime("%d/%m/%Y") %>
+                      <%= animal.updated_at.strftime("%d/%m/%Y") %>
                     </td>
-                    <% if bank.category == 'entrada' %>
-                        <td class="px-6 py-4 text-green-500">
-                            + R<%= number_to_currency(bank.amount) %>
-                        </td>
-                    <% else %>
-                        <td class="px-6 py-4 text-red-500">
-                            - R<%= number_to_currency(bank.amount) %>
-                        </td>
-                    <% end %>
                     <td class="px-6 py-4 text-right">
-                    <%= link_to edit_bank_path(bank), class: 'font-semibold text-red-600 hover:text-black hover:underline' do %>
-                      Atualizar
-                    <% end %>
+                      <%= link_to edit_animal_path(animal), class: 'font-semibold text-red-600 hover:text-black hover:underline' do %>
+                        Visualizar
+                      <% end %>
                     </td>
                 </tr>
             <% end %>
