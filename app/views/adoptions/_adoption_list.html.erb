@@ -1,0 +1,27 @@
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6 p-8">
+  <% @animals_available.each do |animal| %>
+    <div class="rounded-lg bg-white shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 duration-300">
+      <div class="relative overflow-hidden bg-cover bg-no-repeat">
+        <% if animal.photo.present? %>
+          <% ActiveStorage::Current.url_options = { host: request.base_url } %>
+          <%= image_tag animal.photo.url %>
+        <% else %>
+          <%= image_tag("cachorro-sem-foto.png") %>
+        <% end %>
+      </div>
+      <div class="p-6">
+        <h5
+          class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+          <%= animal.name %>
+        </h5>
+        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+          <%= animal.description %>
+        </p>
+        <%= link_to animal_path(animal),
+          class: 'button-primary' do %>
+          Visualizar
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

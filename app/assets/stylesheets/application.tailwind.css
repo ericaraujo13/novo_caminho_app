@@ -26,4 +26,15 @@
   .button-secondary {
     @apply text-gray-900 border border-gray-800 p-2 text-sm rounded-lg hover:bg-gray-100
   }
+
+  .select-input {
+    @apply block appearance-none w-full border border-gray-300 py-2 px-3 rounded leading-tight focus:outline-none focus:border-blue-500
+  }
+  .balance-negative {
+    @apply bg-red-300 rounded-lg p-2 text-2xl ml-4
+  }
+
+  .balance-positive {
+    @apply bg-green-300 rounded-lg p-2 text-2xl ml-4
+  }
 }

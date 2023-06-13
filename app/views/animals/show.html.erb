@@ -5,7 +5,12 @@
             <div class="w-full md:w-3/12 md:mx-2">
                 <div class="bg-white p-3 border-t-4 border-green-400">
                     <div class="image overflow-hidden text-black">
-                        <%= image_tag("basset.jpg") %>
+                        <% if @animal.photo.present? %>
+                          <% ActiveStorage::Current.url_options = { host: request.base_url } %>
+                          <%= image_tag @animal.photo.url, class: "min-w-full" %>
+                        <% else %>
+                          <%= image_tag("cachorro-sem-foto.png") %>
+                        <% end %>
                     </div>
                     <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><%= @animal.name %></h1>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6"><%= @animal.description %></p>
@@ -25,11 +30,9 @@
             </div>
             <div class="w-full md:w-9/12 mx-2 h-64">
                 <div class="bg-white p-3 shadow-sm rounded-sm">
-                    <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                        <span clas="text-green-500">
-
-                        </span>
-                        <span class="tracking-wide">Sobre 🐕</span>
+                    <div class="flex justify-between items-center space-x-2 font-semibold text-gray-900 leading-8">
+											<span class="tracking-wide ml-4">Sobre 🐕</span>
+											<%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
                     </div>
                     <div class="text-gray-700">
                         <div class="grid md:grid-cols-2 text-sm">
@@ -38,7 +41,7 @@
                                 <div class="px-4 py-2"><%= @animal.name %></div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Raca</div>
+                                <div class="px-4 py-2 font-semibold">Raça</div>
                                 <div class="px-4 py-2"><%= @animal.race %></div>
                             </div>
                             <div class="grid grid-cols-2">
@@ -68,12 +71,18 @@
                         </div>
                         <div>
                             <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                                <span class="tracking-wide">Observacoes 📔</span>
+                              <span class="tracking-wide">Observações 📔</span>
                             </div>
                             <ul class="list-inside space-y-2">
+                              <% if @animal.comment.present? %>
                                 <li>
-                                    <div class="text-teal-600">Deixar separado do dog porque eles brigam</div>
+                                        <div class="text-teal-600"><%= @animal.comment %></div>
                                 </li>
+                                <% else %>
+                                    <li>
+                                        <div class="text-gray-400">Nenhuma observação.</div>
+                                </li>
+                              <% end %>
                             </ul>
                         </div>
                     </div>
