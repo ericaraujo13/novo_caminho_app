@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :load_animals, only: %i[ show edit update destroy ]
+  before_action :load_animals, only: %i[ show update destroy]
 
   def index
     @animals = Animal.all
@@ -7,11 +7,7 @@ class AnimalsController < ApplicationController
 
   def show; end
 
-  def new
-    @animal = Animal.new
-  end
-
-  def edit;
+  def new;
   end
 
   def create
@@ -26,7 +22,7 @@ class AnimalsController < ApplicationController
 
   def update
     if @animal.update(animal_params)
-      redirect_to animal_path, notice: 'Animal was successfully updated.'
+      redirect_to @animal, notice: 'Animal was successfully updated.'
     else
       render :edit
     end
@@ -44,6 +40,6 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:name, :description, :race, :comment, :photo)
+    params.require(:animal).permit(:name, :description, :race)
   end
 end
