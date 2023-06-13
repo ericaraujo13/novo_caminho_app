@@ -5,7 +5,12 @@
             <div class="w-full md:w-3/12 md:mx-2">
                 <div class="bg-white p-3 border-t-4 border-green-400">
                     <div class="image overflow-hidden text-black">
-                        <%= image_tag("basset.jpg") %>
+                        <% if @animal.photo.present? %>
+                          <% ActiveStorage::Current.url_options = { host: request.base_url } %>
+                          <%= image_tag @animal.photo.url, class: "min-w-full" %>
+                        <% else %>
+                          <%= image_tag("cachorro-sem-foto.png") %>
+                        <% end %>
                     </div>
                     <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><%= @animal.name %></h1>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6"><%= @animal.description %></p>
