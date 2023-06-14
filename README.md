@@ -59,7 +59,7 @@ Inclua aqui algumas screenshots do seu projeto para visualização.
 
 ### Tela de Medicamentos
 
-![Tela de medicamentos](screenshots/show-animal-admin.png)
+![Tela de medicamentos](screenshots/index-medicamentos-admin.png)
 
 ### Tela de Criacao de medicamentos
 
