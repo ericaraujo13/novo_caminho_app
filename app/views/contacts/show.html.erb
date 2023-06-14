@@ -12,7 +12,7 @@
             <ul class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
               <li class="flex items-center py-3">
                 <span>Cargo</span>
-                <span class="ml-auto"><span class="bg-green-500 py-1 px-2 rounded text-white text-sm">Veterinario</span></span>
+                <span class="ml-auto"><span class="bg-green-500 py-1 px-2 rounded text-white text-sm"><%= @contact.role.humanize.capitalize %></span></span>
               </li>
             </ul>
           </div>
@@ -30,11 +30,11 @@
               <div class="flex">
                   <div>
                       <div class="px-4  font-semibold">Nome:</div>
-                      <div class="px-4"><%= @contact.first_name %></div>
+                      <div class="px-4"><%= @contact.first_name.humanize.capitalize %></div>
                   </div>
                   <div>
                       <div class="px-4 font-semibold">Sobrenome:</div>
-                      <div class="px-4"><%= @contact.last_name %></div>
+                      <div class="px-4"><%= @contact.last_name.humanize.capitalize %></div>
                   </div>
                   <div>
                       <div class="px-4 font-semibold">CPF:</div>
@@ -58,15 +58,15 @@
                       <div class="flex space-x-8">
                         <li>
                           <div class="text-teal-600">Rua</div>
-                          <div class="text-gray-500 text-xs"><%= @contact.address.street %></div>
+                          <div class="text-gray-500 text-xs"><%= @contact.address.street.humanize.capitalize %></div>
                         </li>
                         <li>
                           <div class="text-teal-600">Numero</div>
-                          <div class="text-gray-500 text-xs"><%= @contact.address.number %></div>
+                          <div class="text-gray-500 text-xs"><%= @contact.address.number.humanize.capitalize %></div>
                         </li>
                         <li>
                           <div class="text-teal-600">Cidade</div>
-                          <div class="text-gray-500 text-xs"><%= @contact.address.city %></div>
+                          <div class="text-gray-500 text-xs"><%= @contact.address.city.humanize.capitalize %></div>
                         </li>
                       </div>
                     </ul>

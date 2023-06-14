@@ -44,18 +44,18 @@
 											<%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
                     </div>
                     <div class="text-gray-700">
-                        <div class="grid md:grid-cols-2 text-sm">
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Nome</div>
-                                <div class="px-4 py-2"><%= @animal.name %></div>
+                        <div class="grid md:grid-cols-1 text-sm">
+                            <div class="flex">
+                                <div class="px-4 py-2 font-semibold">Nome:</div>
+                                <div class="px-4 py-2"><%= @animal.name.humanize.capitalize %></div>
                             </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Raça</div>
-                                <div class="px-4 py-2"><%= @animal.race %></div>
+                            <div class="flex">
+                                <div class="px-4 py-2 font-semibold">Raça:</div>
+                                <div class="px-4 py-2"><%= @animal.race.humanize.capitalize %></div>
                             </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Sexo</div>
-                                <div class="px-4 py-2">Macho</div>
+                            <div class="flex">
+                                <div class="px-4 py-2 font-semibold">Sexo:</div>
+                                <div class="px-4 py-2"><%= @animal.gender.humanize.capitalize %></div>
                             </div>
                         </div>
                     </div>
@@ -69,12 +69,7 @@
                             </div>
                             <ul class="list-inside space-y-2">
                                 <li>
-                                    <div class="text-teal-600">Dipirona</div>
-                                    <div class="text-gray-500 text-xs">12 em 12 horas</div>
-                                </li>
-                                <li>
-                                    <div class="text-teal-600">Anti carrapatos</div>
-                                    <div class="text-gray-500 text-xs">1 comprimido por dia</div>
+                                    <div class="text-gray-500 text-sm"><%= simple_format(@animal.medicament) %></div>
                                 </li>
                             </ul>
                         </div>
@@ -85,11 +80,11 @@
                             <ul class="list-inside space-y-2">
                               <% if @animal.comment.present? %>
                                 <li>
-                                        <div class="text-teal-600"><%= @animal.comment %></div>
+                                  <div class="text-gray-500 text-sm"><%= simple_format(@animal.comment) %></div>
                                 </li>
                                 <% else %>
-                                    <li>
-                                        <div class="text-gray-400">Nenhuma observação.</div>
+                                  <li>
+                                    <div class="text-gray-400">Nenhuma observação.</div>
                                 </li>
                               <% end %>
                             </ul>

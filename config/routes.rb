@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'home#index'
+
   resources :banks
   resources :contacts
   resources :medicines
-  devise_for :users
-  resources :animals
   resources :adoptions, only: :index
-  root 'home#index'
+  resources :animals
 end

@@ -22,10 +22,20 @@
     <hr class="my-10">
     <div class="grid grid-cols-2 gap-4">
       <div class=" h-full rounded-lg ">
+        <% if @recents.blank? %>
           <%= render 'moneytab' %>
+          <p class="text-center text-gray-400 mt-4">Nenhum dado por enquanto.</p>
+        <% else %>
+          <%= render 'moneytab' %>
+        <% end %>
       </div>
        <div class="h-full rounded-lg">
-          <%= render 'recent_adoptions' %>
+          <% if @recent_adoptions.blank? %>
+            <%= render 'recent_adoptions' %>
+            <p class="text-center text-gray-400 mt-4">Nenhum dado por enquanto.</p>
+          <% else %>
+            <%= render 'recent_adoptions' %>
+          <% end %>
       </div>
     </div>
   </div>
