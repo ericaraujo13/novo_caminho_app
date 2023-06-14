@@ -19,6 +19,60 @@ Faça as alterações necessárias e commit-as: git commit -m 'Implementação d
 Envie suas alterações para o repositório remoto: git push origin minha-nova-feature.
 Abra um pull request no repositório original.
 
+## Screenshots
+
+Inclua aqui algumas screenshots do seu projeto para visualização.
+
+### Tela de Login
+
+![Tela de login](screenshots/tela-login-admin.png)
+
+### Tela de Cadastro
+
+![Tela de Cadastro](screenshots/tela-register-admin.png)
+
+### Tela de Esqueci minha senha
+
+![Tela de Esqueci minha senha](screenshots/tela-forgot-password.png)
+
+### Dashboard
+
+![Tela de dashboard](screenshots/dashboard-admin.png)
+
+### Tela de Index de animal
+
+![Tela de index de animal](screenshots/index-animal-admin.png)
+
+### Tela de Criar animal
+
+![Tela de criacao de animal](screenshots/create-animal-admin.png)
+
+### Tela de Alterar dados de animal
+
+![Tela de alterar dados de animal](screenshots/edit-animal-admin.png)
+
+
+### Tela de Visualizar de animal
+
+![Tela de visualizar animal](screenshots/show-animal-admin.png)
+
+
+### Tela de Medicamentos
+
+![Tela de medicamentos](screenshots/show-animal-admin.png)
+
+### Tela de Criacao de medicamentos
+
+![Tela de criacao de medicamento](screenshots/tela-criar-medicamentos.png)
+
+### Tela de Adocao
+
+![Tela de adocao](screenshots/tela-adocao-admin.png)
+
+## Tela de controle de caixa
+
+![Tela de caixa](screenshots/transaction-index.png)
+
 ## Autor
 Eric Poloni Araujo
 
