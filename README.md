@@ -63,7 +63,7 @@ Inclua aqui algumas screenshots do seu projeto para visualização.
 
 ### Tela de Criacao de medicamentos
 
-![Tela de criacao de medicamento](screenshots/screenshots/tela-criar-medicamentos-admin.png)
+![Tela de criacao de medicamento](screenshots/tela-criar-medicamentos-admin.png)
 
 ### Tela de Adocao
 
