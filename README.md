@@ -45,7 +45,7 @@ Inclua aqui algumas screenshots do seu projeto para visualização.
 
 ### Tela de Criar animal
 
-![Tela de criacao de animal](screenshots/create-animal-admin.png)
+![Tela de criacao de animal](screenshots/create-animal.png)
 
 ### Tela de Alterar dados de animal
 
