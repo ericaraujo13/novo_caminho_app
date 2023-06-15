@@ -1,5 +1,5 @@
 class Bank < ApplicationRecord
-  enum category: { entrada: 1, saida: 2 }
+  enum category: { entrada: 1, saída: 2 }
 
   before_validation :calculate_total_amount
 

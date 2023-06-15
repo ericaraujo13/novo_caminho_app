@@ -5,7 +5,7 @@
       <h1 class="text-4xl font-bold ">📓 Agenda</h1>
     </div>
     <div class="">
-      <%= link_to "Adicionar novo contato", new_contact_path, class: "bg-black text-white p-2 rounded-lg" %>
+      <%= link_to "Adicionar novo contato", new_contact_path, class: "button-primary" %>
     </div>
   </div>
   <table class="w-full text-sm text-left text-gray-500 shadow-lg rounded-lg">
@@ -17,37 +17,24 @@
             <th scope="col" class="px-6 py-3">
                 Cpf
             </th>
-             <th scope="col" class="px-6 py-3">
-            </th>
-             <th scope="col" class="px-6 py-3">
-            </th>
             <th scope="col" class="px-6 py-3">
             </th>
           </tr>
       </thead>
       <tbody>
         <% @contacts.each do |contact| %>
-
           <tr class="bg-white border-b">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                 <%= contact.full_name %>
-            </th>
+            </td>
             <td class="px-6 py-4">
                 <%= contact.cpf %>
             </td>
-            <td class="px-6 py-4 text-end">
-              <%= link_to edit_contact_path(contact),
-                class: 'font-semibold text-red-600 hover:text-black hover:underline' do %>
-                Atualizar
-              <% end %>
-            </td>
-             <td class="px-6 py-4">
+            <td class="px-6 py-4 flex space-x-4">
               <%= link_to contact_path(contact),
                 class: 'text-red-500 hover:text-black hover:underline' do %>
                 Visualizar
               <% end %>
-            </td>
-            <td class="px-6 py-4">
               <%= link_to contact_path(contact), data: { turbo_method: :delete },
                 class: 'text-red-500 hover:text-black hover:underline' do %>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -3,7 +3,7 @@ class BanksController < ApplicationController
 
   def index
     @banks = Bank.all
-    @total_amount = Bank.where(category: :entrada).sum(:amount) - Bank.where(category: :saida).sum(:amount)
+    @total_amount = Bank.where(category: :entrada).sum(:amount) - Bank.where(category: :saída).sum(:amount)
   end
 
   def show

@@ -13,7 +13,7 @@
       <% end %>
       <div class="bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
         <h1>Doentes</h1>
-        <p class="text-2xl font-bold">0</p>
+        <p class="text-2xl font-bold"><%= Animal.where(sick: "doente").count %></p>
       </div>
       <%= link_to contacts_path, class: "bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-9 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
         <h1 class="font-bold">Agenda</h1>

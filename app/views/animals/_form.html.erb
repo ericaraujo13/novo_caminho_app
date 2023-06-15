@@ -5,51 +5,49 @@
         <%= f.text_field :name,
                           autofocus: true,
                           required: true,
-                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
-                                  rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
-                                  focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
-                                  <%= f.label :race, 'Raca', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+                          class: 'input-form' %>
+
+        <%= f.label :race, 'Raça', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
         <%= f.text_field :race,
                         autofocus: true,
-                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
-                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
-                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+                        class: 'input-form' %>
 
         <%= f.label :gender, 'Sexo', class: "block text-sm font-medium mb-2 ml-1 text-gray-700" %>
-        <%= f.select :gender, { "Macho" => :macho, "Femea" => :femea }, { prompt: 'Selecione o sexo do animal' },
+        <%= f.select :gender, { "Macho" => :macho, "Fêmea" => :femea }, { prompt: 'Selecione o sexo do animal' },
           class: "select-input mb-2" %>
 
-        <%= f.label :description, 'Descricao', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
-        <%= f.text_area :description,
-                        autofocus: true,
-                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
-                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
-                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+        <%= f.label :sick, 'Saúde', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.select :sick, { "Doente" => :doente, "Saudável" => :saudavel }, { prompt: 'Selecione' },
+          class: "select-input mb-2" %>
 
-        <%= f.label :comment, 'Oberservações', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+
+        <%= f.label :description, 'Descrição', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
+        <%= f.text_area :description,
+                      autofocus: true,
+                      class: 'input-form' %>
+
+        <%= f.label :comment, 'Observações', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
         <%= f.text_area :comment,
                         autofocus: true,
-                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
-                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
-                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+                          class: 'input-form' %>
 
         <%= f.label :medicament, 'Medicamentos', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
         <%= f.text_area :medicament,
                         autofocus: true,
-                          class: 'appearance-none block w-full px-3 py-2 border border-gray-300
-                          rounded-md shadow-sm mb-4 placeholder-gray-400 focus:outline-none
-                          focus:ring-orange-400 focus:border-orange-500 sm:text-sm' %>
+                          class: 'input-form' %>
 
 
         <%= f.label :photo, "Adicione uma foto", class: "block text-sm font-medium mb-2 ml-1 text-gray-700"%>
         <%= f.file_field :photo, class:"mr-auto border border-gray-300 rounded-lg p-2 w-full mb-2", data: { target: "image-preview.input", action: "image-preview#readURL" } %>
 
-        <%= f.submit "Concluido", class:"button-primary" %>
-        <% if @animal.id.present? %>
-          <%= link_to "Voltar", animal_path, class:"button-primary flex" %>
-        <% else %>
-          <%= link_to "Voltar", animals_path, class:"button-primary flex" %>
-        <% end %>
+      <div class="space-y-2">
+         <% if @animal.id.present? %>
+            <%= link_to "Voltar", animal_path, class:"button-secondary font-bold p-2" %>
+          <% else %>
+            <%= link_to "Voltar", animals_path, class:"button-secondary p-2 font-bold" %>
+          <% end %>
+          <%= f.submit "Concluido", class:"button-primary w-48" %>
+      </div>
     </div>
     <div class="mx-auto p-8">
       <h1 class="text-center text-gray-700 font-bold text-xl mb-2">Foto selecionada</h1>
