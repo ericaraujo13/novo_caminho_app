@@ -3,6 +3,8 @@ class Bank < ApplicationRecord
 
   before_validation :calculate_total_amount
 
+  validates :title, :category, :amount, presence: true
+
   def calculate_total_amount
     entries = Bank.where(category: :entrada).sum(:amount)
     exits = Bank.where(category: :saida).sum(:amount)

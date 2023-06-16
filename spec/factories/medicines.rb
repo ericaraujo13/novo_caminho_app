@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :medicine do
-    name { "MyString" }
-    quantity { "MyString" }
+    name { FFaker::Internet.user_name }
+    quantity { rand(0..100) }
   end
 end
