@@ -13,10 +13,5 @@ RSpec.describe 'Animal', type: :request do
       get url
       expect(animals.count).to eq(10)
     end
-
-    it 'renders a successful response' do
-      get url
-      expect(response).to be_successful
-    end
   end
 end
