@@ -1,7 +1,10 @@
 FactoryBot.define do
   factory :animal do
-    name { "MyString" }
-    race { "MyString" }
-    description { "MyString" }
+    name { FFaker::NameBR.name }
+    race { FFaker::AnimalBR.common_name }
+    description { FFaker::LoremBR.words }
+    gender { %i(macho fêmea).sample }
+    adoption { %i(disponível adotado).sample }
+    sick { %i(doente saudavel).sample }
   end
 end

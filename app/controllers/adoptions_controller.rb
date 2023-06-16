@@ -2,7 +2,7 @@ class AdoptionsController < ApplicationController
   before_action :load_animals
 
   def index
-    @animals_available = @animals.where(adoption: :disponivel)
+    @animals_available = @animals.where(adoption: :disponível)
   end
 
   private
