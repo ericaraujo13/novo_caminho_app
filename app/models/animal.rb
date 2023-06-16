@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Animal < ApplicationRecord
   enum adoption: { disponível: 0, adotado: 1 }
   enum gender: { macho: 0, fêmea: 1 }

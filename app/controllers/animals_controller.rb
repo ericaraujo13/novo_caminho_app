@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AnimalsController < ApplicationController
-  before_action :load_animals, only: %i[ show edit update destroy ]
+  before_action :load_animals, only: %i[show edit update destroy]
 
   def index
     @animals = Animal.all
@@ -11,8 +13,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new
   end
 
-  def edit;
-  end
+  def edit; end
 
   def create
     @animal = Animal.new(animal_params)
