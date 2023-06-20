@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
 
   def index
     @q = Contact.ransack(params[:q])
-    @contacts = @q.result(district: true)
+    @contacts = @q.result(district: true).page(params[:page])
   end
 
   def show; end
