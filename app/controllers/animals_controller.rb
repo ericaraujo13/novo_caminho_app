@@ -5,7 +5,7 @@ class AnimalsController < ApplicationController
 
   def index
     @q = Animal.ransack(params[:q])
-    @animals = @q.result(distinct: true)
+    @animals = @q.result(distinct: true).page(params[:page])
   end
 
   def show; end

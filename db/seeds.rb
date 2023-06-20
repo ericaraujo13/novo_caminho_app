@@ -6,3 +6,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+  50.times do |x|
+    animals = Animal.create(name: FFaker::NameBR.name, race: FFaker::AnimalBR.common_name, description: FFaker::LoremBR.words, gender: "macho", adoption: "disponível", sick: "saudavel")
+  end
