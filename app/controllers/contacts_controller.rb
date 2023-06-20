@@ -4,7 +4,8 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = Contact.all
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(district: true)
   end
 
   def show; end

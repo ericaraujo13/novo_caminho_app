@@ -4,7 +4,8 @@ class AnimalsController < ApplicationController
   before_action :load_animals, only: %i[show edit update destroy]
 
   def index
-    @animals = Animal.all
+    @q = Animal.ransack(params[:q])
+    @animals = @q.result(distinct: true)
   end
 
   def show; end

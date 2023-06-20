@@ -4,7 +4,8 @@ class MedicinesController < ApplicationController
   before_action :set_medicine, only: %i[show edit update destroy]
 
   def index
-    @medicines = Medicine.all
+    @q = Medicine.ransack(params[:q])
+    @medicines = @q.result(district: true)
   end
 
   def show; end
