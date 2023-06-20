@@ -10,7 +10,9 @@
             clip-rule="evenodd"></path>
         </svg>
       </div>
-      <input type="text" id="table-search" class="search-input" placeholder="Pesquisar">
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :first_name_cont, class: "search-input", placeholder: "Pesquisar..." %>
+      <% end %>
       </div>
     </div>
   </div>
