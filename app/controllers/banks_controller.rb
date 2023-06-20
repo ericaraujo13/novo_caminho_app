@@ -4,7 +4,7 @@ class BanksController < ApplicationController
   before_action :set_bank, only: %i[show edit update destroy]
 
   def index
-    @banks = Bank.all
+    @banks = Bank.all.order(created_at: :desc)
     @total_amount = Bank.where(category: :entrada).sum(:amount) - Bank.where(category: :saída).sum(:amount)
   end
 

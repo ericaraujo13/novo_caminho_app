@@ -1,7 +1,17 @@
 # frozen_string_literal: true
 
 class Animal < ApplicationRecord
-  enum adoption: { disponível: 0, adotado: 1 }
+  include AASM
+
+  aasm do
+    state :available, initial: true
+    state :unavailable
+
+    event :adopted do
+      transitions from: :available, to: :unavailable
+    end
+  end
+
   enum gender: { macho: 0, fêmea: 1 }
   enum sick: { doente: 0, saudavel: 1 }
 

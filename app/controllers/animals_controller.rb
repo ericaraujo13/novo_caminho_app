@@ -14,6 +14,13 @@ class AnimalsController < ApplicationController
     @animal = Animal.new
   end
 
+  def adoption
+    @animal = Animal.find(params[:id])
+    @animal.adopted!
+    redirect_to animal_path, notice: 'Animal adotado.'
+  end
+
+
   def edit; end
 
   def create

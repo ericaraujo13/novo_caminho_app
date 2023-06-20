@@ -25,7 +25,7 @@
                       autofocus: true,
                         class: 'input-form' %>
     </div>
-    <div>
+    <div class="px-3 mb-2">
       <h1 class="font-semibold mb-4">Endereço</h1>
         <%= f.fields_for :address do |address_fields| %>
           <%= address_fields.label :street, 'Rua', class: 'block text-sm font-medium mb-2 ml-1 text-gray-700' %>
@@ -43,12 +43,14 @@
                                         autofocus: true,
                                         class: 'input-form' %>
         <% end %>
+
+          <% if @contact.id.present? %>
+            <%= link_to "Voltar", contact_path, class:"button-secondary " %>
+          <% else %>
+            <%= link_to "Voltar", contacts_path, class:"button-secondary" %>
+          <% end %>
+          <%= f.submit "Concluido", class:"button-primary" %>
     </div>
-      <% if @contact.id.present? %>
-        <%= link_to "Voltar", contact_path, class:"button-secondary " %>
-      <% else %>
-          <%= link_to "Voltar", contacts_path, class:"button-secondary" %>
-      <% end %>
-      <%= f.submit "Concluido", class:"button-primary" %>
+
   <% end %>
 </div>

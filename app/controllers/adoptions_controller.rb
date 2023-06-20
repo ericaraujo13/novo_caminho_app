@@ -4,7 +4,7 @@ class AdoptionsController < ApplicationController
   before_action :load_animals
 
   def index
-    @animals_available = @animals.where(adoption: :disponível).page(params[:page])
+    @animals_available = @animals.available.page(params[:page])
   end
 
   private

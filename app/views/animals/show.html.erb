@@ -19,15 +19,11 @@
                         <li class="flex items-center py-3">
                             <span>Status</span>
                             <span class="ml-auto">
-                              <% if @animal.adoption == "disponível" %>
+                              <% if @animal.available? %>
                                 <span class="bg-green-500 py-1 px-2 rounded text-white text-sm">Disponível</span>
                               <% else %>
                                 <span class="bg-red-500 py-1 px-2 rounded text-white text-sm">Adotado</span>
                             </span>
-                        </li>
-                        <li class="flex items-center py-3">
-                            <span>Adotado por:</span>
-                            <span class="ml-auto">Fulano</span>
                         </li>
                         <% end %>
                         <li class="flex items-center py-3">
@@ -40,8 +36,13 @@
             <div class="w-full md:w-9/12 mx-2 h-64">
                 <div class="bg-white p-3 shadow-sm rounded-sm">
                     <div class="flex justify-between items-center space-x-2 font-semibold text-gray-900 leading-8">
-											<span class="tracking-wide ml-4">Sobre 🐕</span>
-											<%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
+                      <span class="tracking-wide ml-4">Sobre 🐕</span>
+                      <div class="flex items-center space-x-2">
+                      <%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
+                      <% if @animal.available? %>
+                        <%= button_to "Adicionar adoção", adoption_animal_path(@animal), method: :patch, class: "text-xs p-2 bg-black text-white rounded-lg" %>
+                      <% end %>
+                      </div>
                     </div>
                     <div class="text-gray-700">
                         <div class="grid md:grid-cols-1 text-sm">
