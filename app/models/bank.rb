@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Bank < ApplicationRecord
   enum category: { entrada: 1, saída: 2 }
 

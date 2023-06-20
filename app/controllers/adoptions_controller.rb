@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdoptionsController < ApplicationController
   before_action :load_animals
 

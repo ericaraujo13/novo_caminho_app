@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddSickToAnimal < ActiveRecord::Migration[7.0]
   def change
     add_column :animals, :sick, :integer

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class BanksController < ApplicationController
-  before_action :set_bank, only: %i[ show edit update destroy ]
+  before_action :set_bank, only: %i[show edit update destroy]
 
   def index
     @banks = Bank.all
@@ -14,15 +16,14 @@ class BanksController < ApplicationController
     @bank = Bank.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @bank = Bank.new(bank_params)
 
     if @bank.save
       @total_amount = @bank.calculate_total_amount
-      redirect_to banks_path, notice: "Bank was successfully created."
+      redirect_to banks_path, notice: 'Bank was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +31,7 @@ class BanksController < ApplicationController
 
   def update
     if @bank.update(bank_params)
-      redirect_to banks_path, notice: "Bank was successfully updated."
+      redirect_to banks_path, notice: 'Bank was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,15 +40,16 @@ class BanksController < ApplicationController
   def destroy
     @bank.destroy
 
-    redirect_to banks_path, notice: "Bank was successfully destroyed."
+    redirect_to banks_path, notice: 'Bank was successfully destroyed.'
   end
 
   private
-    def set_bank
-      @bank = Bank.find(params[:id])
-    end
 
-    def bank_params
-      params.require(:bank).permit(:title, :category, :amount)
-    end
+  def set_bank
+    @bank = Bank.find(params[:id])
+  end
+
+  def bank_params
+    params.require(:bank).permit(:title, :category, :amount)
+  end
 end
