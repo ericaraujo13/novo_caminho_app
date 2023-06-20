@@ -5,7 +5,7 @@ class MedicinesController < ApplicationController
 
   def index
     @q = Medicine.ransack(params[:q])
-    @medicines = @q.result(district: true)
+    @medicines = @q.result(district: true).page(params[:page])
   end
 
   def show; end

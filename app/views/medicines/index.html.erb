@@ -8,8 +8,13 @@
       <%= link_to "Adicionar medicamento", new_medicine_path, class: "bg-black text-white p-2 rounded-lg" %>
     </div>
   </div>
-  <div>
-    <%= render 'search_bar' %>
+  <div class="flex justify-beetween items-center ">
+    <div>
+        <%= paginate @medicines %>
+    </div>
+    <div class="ml-auto">
+      <%= render 'search_input' %>
+    </div>
   </div>
   <table class="w-full text-sm text-left text-gray-500 shadow-lg rounded-lg">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50">
