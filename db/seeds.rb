@@ -7,5 +7,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
   50.times do |x|
-    animals = Animal.create(name: FFaker::NameBR.name, race: FFaker::AnimalBR.common_name, description: FFaker::LoremBR.words, gender: "macho", adoption: "disponível", sick: "saudavel")
+    animals = Animal.create(name: FFaker::NameBR.name, race: FFaker::AnimalBR.common_name, description: FFaker::LoremBR.words, gender: "macho", sick: "saudavel")
+    medicines = Medicine.create(name: FFaker::Internet.user_name, quantity: rand(1..100))
   end
+  user = User.create(name: "Teste", email: "teste@teste.com", password: "123456789", password_confirmation: "123456789")

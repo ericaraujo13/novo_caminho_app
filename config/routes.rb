@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :contacts
   resources :medicines
   resources :adoptions, only: :index
-  resources :animals
+  resources :animals do
+    member do
+      patch :adoption
+    end
+  end
 end
