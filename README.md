@@ -3,7 +3,7 @@
 Este projeto tem como objetivo desenvolver uma aplicação de administração e controle de adoção para uma ONG de resgate de animais de rua. Através dessa aplicação, será possível facilitar e agilizar o processo de adoção, garantindo que os animais sejam devidamente acolhidos por famílias responsáveis.
 
 # Link para visualizar o projeto
-  https://novocaminhoapp.fly.dev/users/sign_in
+  https://novocaminhoapp.fly.dev
 
 ## Funcionalidades Principais
 
