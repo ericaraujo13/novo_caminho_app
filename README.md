@@ -29,49 +29,48 @@ Inclua aqui algumas screenshots do seu projeto para visualização.
 
 ### Tela de Cadastro
 
-![Tela de Cadastro](screenshots/tela-register-admin.png)
+![Tela de Cadastro](screenshots/registrar.png)
 
 ### Tela de Esqueci minha senha
 
-![Tela de Esqueci minha senha](screenshots/tela-forgot-password.png)
+![Tela de Esqueci minha senha](screenshots/esqueceu-senha.png)
 
 ### Dashboard
 
-![Tela de dashboard](screenshots/dashboard-admin.png)
+![Tela de dashboard](screenshots/dashboard.png)
 
 ### Tela de Index de animal
 
-![Tela de index de animal](screenshots/index-animal-admin.png)
+![Tela de index de animal](screenshots/animal-index.png)
 
 ### Tela de Criar animal
 
-![Tela de criacao de animal](screenshots/create-animal.png)
-
-### Tela de Alterar dados de animal
-
-![Tela de alterar dados de animal](screenshots/edit-animal-admin.png)
-
+![Tela de criacao de animal](screenshots/animal-create.png)
 
 ### Tela de Visualizar de animal
 
-![Tela de visualizar animal](screenshots/show-animal-admin.png)
+![Tela de visualizar animal](screenshots/animal-show.png)
 
 
 ### Tela de Medicamentos
 
-![Tela de medicamentos](screenshots/index-medicamentos-admin.png)
+![Tela de medicamentos](screenshots/medicament-index.png)
 
 ### Tela de Criacao de medicamentos
 
-![Tela de criacao de medicamento](screenshots/tela-criar-medicamentos-admin.png)
+![Tela de criacao de medicamento](screenshots/medicament-create.png)
 
 ### Tela de Adocao
 
-![Tela de adocao](screenshots/tela-adocao-admin.png)
+![Tela de adocao](screenshots/adoption-index.png)
 
 ## Tela de controle de caixa
 
 ![Tela de caixa](screenshots/transaction-index.png)
+
+## Tela de criacao de transacao
+
+![Tela de caixa](screenshots/transaction-create.png)
 
 ## Autor
 Eric Poloni Araujo
