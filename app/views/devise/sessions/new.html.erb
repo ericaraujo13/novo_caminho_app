@@ -1,4 +1,4 @@
-<h1 class='title-primary'>Login</h1>
+<h1 class='text-black text-3xl'>Login</h1>
 
 <div class="mt-6">
   <%= render "devise/shared/error_messages" %>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="space-y-1">
-      <%= f.label :password, class: 'input-label-primary' %>
+      <%= f.label :password, 'Senha', class: 'input-label-primary' %>
 
       <div class="mt-1">
         <%= f.password_field :password,
@@ -31,7 +31,7 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <%= f.check_box :remember_me, class: 'checkbox-primary' %>
-        <%= f.label :remember_me, class: 'checkbox-label' %>
+        <%= f.label :remember_me, 'Lembrar de mim', class: 'checkbox-label' %>
       </div>
 
       <div class="text-sm">
