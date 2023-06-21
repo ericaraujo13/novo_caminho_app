@@ -1,0 +1,7 @@
+pt-BR:
+  Models:
+    User:
+      name: "Nome"
+      password: "Senha"
+      confirm_password: "Confirmacao de senha"
+      email: "Email"

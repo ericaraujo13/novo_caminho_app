@@ -22,6 +22,7 @@ gem 'kaminari'
 gem 'turbo-rails'
 gem 'aasm'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'mjml-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -33,4 +34,5 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'letter_opener_web', '~> 2.0'
 end

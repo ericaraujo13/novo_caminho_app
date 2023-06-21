@@ -1,0 +1,30 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Baloo 2" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap"></mj-font>
+    <mj-title>Say hello to card</mj-title>
+    <mj-attributes>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F2F2F2">
+    <mj-section padding="10px 0 20px 0">
+    </mj-section>
+    <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
+      <mj-column width="35%">
+      </mj-column>
+    </mj-section>
+      <%=  yield %>
+    <mj-section background-color="#ef4444" background-size="cover" background-repeat="no-repeat">
+      <mj-column width="100%">
+        <mj-image src="http://nimus.de/share/tpl-card/lineshadow.png" alt="" align="center" border="none" padding="0px"></mj-image>
+        <mj-text align="center" font-size="13px" font-weight="400" color="white">Não compartilhe esse link com ninguém</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="10px 0 20px 0">
+      <mj-column>
+        <mj-text align="center" color="#9B9B9B" font-size="11px">Enviado por Ong Novo Caminho ❤️ </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

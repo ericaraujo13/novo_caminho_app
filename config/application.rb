@@ -20,5 +20,10 @@ module NovoCaminhoApp
   class Application < Rails::Application
     config.load_defaults 7.0
     config.generators.system_tests = nil
+
+    config.after_initialize do
+      I18n.default_locale = :'pt-BR'
+      I18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}')]
+    end
   end
 end
