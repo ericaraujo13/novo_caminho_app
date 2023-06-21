@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Nome não pode ficar em branco."
+            email:
+              blank: "E-mail não pode ficar em branco."
+            password:
+              blank: "Senha não pode ficar em branco."
+            password_confirmation:
+              blank: "Confirmação de senha não pode ficar em branco."
+              confirmation: "Senha e confirmação de senha devem ser iguais"
