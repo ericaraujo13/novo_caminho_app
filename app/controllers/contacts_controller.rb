@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to contacts_path, notice: 'Contact was successfully created.'
+      redirect_to contacts_path, notice: 'Contato adicionado com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update(contact_params)
-      redirect_to contacts_path, notice: 'Contact was successfully updated.'
+      redirect_to contacts_path, notice: 'Contato atualizado com sucesso.'
     else
       format.html { render :edit, status: :unprocessable_entity }
     end
@@ -38,7 +38,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
 
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    redirect_to contacts_url, notice: 'Contato excluido.'
   end
 
   private

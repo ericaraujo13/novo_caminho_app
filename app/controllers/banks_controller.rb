@@ -23,7 +23,7 @@ class BanksController < ApplicationController
 
     if @bank.save
       @total_amount = @bank.calculate_total_amount
-      redirect_to banks_path, notice: 'Bank was successfully created.'
+      redirect_to banks_path, notice: 'Transação adicionada com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class BanksController < ApplicationController
 
   def update
     if @bank.update(bank_params)
-      redirect_to banks_path, notice: 'Bank was successfully updated.'
+      redirect_to banks_path, notice: 'Transação atualizada com sucesso.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class BanksController < ApplicationController
   def destroy
     @bank.destroy
 
-    redirect_to banks_path, notice: 'Bank was successfully destroyed.'
+    redirect_to banks_path, notice: 'Transação excluida.'
   end
 
   private

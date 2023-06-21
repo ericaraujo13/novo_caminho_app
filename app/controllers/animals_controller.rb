@@ -17,7 +17,7 @@ class AnimalsController < ApplicationController
   def adoption
     @animal = Animal.find(params[:id])
     @animal.adopted!
-    redirect_to animal_path, notice: 'Animal adotado.'
+    redirect_to animal_path, notice: 'Animal adotado com sucesso!'
   end
 
 
@@ -27,7 +27,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
 
     if @animal.save
-      redirect_to animals_path, notice: 'Animal was successfully created.'
+      redirect_to animals_path, notice: 'Animal cadastrado com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class AnimalsController < ApplicationController
 
   def update
     if @animal.update(animal_params)
-      redirect_to animal_path, notice: 'Animal was successfully updated.'
+      redirect_to animal_path, notice: 'Animal atualizado com sucesso.'
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class AnimalsController < ApplicationController
 
   def destroy
     @animal.destroy
-    redirect_to animals_path, notice: 'Animal was successfully destroyed.'
+    redirect_to animals_path, notice: 'Excluido com sucesso.'
   end
 
   private

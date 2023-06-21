@@ -19,7 +19,7 @@ class MedicinesController < ApplicationController
   def create
     @medicine = Medicine.new(medicine_params)
     if @medicine.save
-      redirect_to medicines_path, notice: 'Medicine was successfully created.'
+      redirect_to medicines_path, notice: 'Medicamento adicionado com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class MedicinesController < ApplicationController
 
   def update
     if @medicine.update(medicine_params)
-      redirect_to medicines_path, notice: 'Medicine was successfully updated.'
+      redirect_to medicines_path, notice: 'Medicamento atualizado com sucesso.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,10 +35,7 @@ class MedicinesController < ApplicationController
 
   def destroy
     @medicine.destroy
-
-    respond_to do |_format|
-      redirect_to medicines_url, notice: 'Medicine was successfully destroyed.'
-    end
+    redirect_to medicines_url, notice: 'Medicamento excluido.'
   end
 
   private
