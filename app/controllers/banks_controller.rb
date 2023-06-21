@@ -5,7 +5,7 @@ class BanksController < ApplicationController
 
   def index
     @banks = Bank.all.order(created_at: :desc)
-    @total_amount = Bank.where(category: :entrada).sum(:amount) - Bank.where(category: :saída).sum(:amount)
+    @total_amount = Bank.balance
   end
 
   def show
