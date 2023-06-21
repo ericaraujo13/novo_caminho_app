@@ -11,7 +11,7 @@
     </mj-section>
     <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
       <mj-column width="35%">
-        <mj-image src="<%= asset_url('logo.png') %>" align="center" padding-top="30px"></mj-image>
+        <mj-image src="<%= asset_path('logo.png') %>" align="center" padding-top="30px"></mj-image>
       </mj-column>
     </mj-section>
       <%= yield %>
