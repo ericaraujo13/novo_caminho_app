@@ -36,3 +36,5 @@ group :development do
   gem 'web-console'
   gem 'letter_opener_web', '~> 2.0'
 end
+
+gem "dockerfile-rails", ">= 1.4", :group => :development
