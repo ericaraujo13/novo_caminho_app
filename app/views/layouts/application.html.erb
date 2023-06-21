@@ -11,7 +11,10 @@
   </head>
 
   <body class="bg-gray-100">
-      <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' %>
+    <div>
+      <%= render 'shared/flash' %>
+    </div>
     <main class="container mx-auto mt-12 px-5 mb-12">
       <%= yield %>
     </main>

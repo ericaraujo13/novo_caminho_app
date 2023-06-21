@@ -7,6 +7,7 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'active_link_to', '~> 1.0', '>= 1.0.5'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

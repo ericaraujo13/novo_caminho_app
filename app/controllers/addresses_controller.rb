@@ -10,7 +10,7 @@ class AddressesController < ApplicationController
   def create
     @address = @contact.build_address(address_params)
     if @address.save
-      redirect_to @contact, notice: 'Address was successfully created.'
+      redirect_to @contact
     else
       render :new
     end
@@ -23,7 +23,7 @@ class AddressesController < ApplicationController
   def update
     @address = @contact.address
     if @address.update(address_params)
-      redirect_to @contact, notice: 'Address was successfully updated.'
+      redirect_to @contact
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class AddressesController < ApplicationController
   def destroy
     @address = @contact.address
     @address.destroy
-    redirect_to @contact, notice: 'Address was successfully destroyed.'
+    redirect_to @contact
   end
 
   private
