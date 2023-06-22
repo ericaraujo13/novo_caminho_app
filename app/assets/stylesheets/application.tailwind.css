@@ -39,7 +39,7 @@
   }
 
   .balance-negative {
-    @apply bg-red-300 rounded-lg p-2 text-2xl ml-4
+    @apply bg-gray-300 rounded-lg p-2 text-2xl ml-4
   }
 
   .balance-positive {
@@ -55,4 +55,8 @@
      @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
      focus:ring-black focus:border-black block w-80 pl-10 p-2.5
     }
+
+  .link-color {
+    @apply text-black hover:text-gray-700
+  }
 }
