@@ -37,11 +37,11 @@
                     </td>
                     <% if bank.category == 'entrada' %>
                         <td class="px-6 py-4 text-green-500">
-                            + R<%= number_to_currency(bank.amount) %>
+                            + <%= number_to_currency(bank.amount) %>
                         </td>
                     <% else %>
                         <td class="px-6 py-4 text-red-500">
-                            - R<%= number_to_currency(bank.amount) %>
+                            - <%= number_to_currency(bank.amount) %>
                         </td>
                     <% end %>
                     <td class="px-6 py-4 text-right">
