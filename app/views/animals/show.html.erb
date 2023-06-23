@@ -14,22 +14,31 @@
                     </div>
                     <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><%= @animal.name %></h1>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6"><%= @animal.description %></p>
-                    <ul
-                        class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
-                        <li class="flex items-center py-3">
-                            <span>Status</span>
-                            <span class="ml-auto">
-                              <% if @animal.available? %>
-                                <span class="bg-green-500 py-1 px-2 rounded text-white text-sm">Disponível</span>
-                              <% else %>
-                                <span class="bg-red-500 py-1 px-2 rounded text-white text-sm">Adotado</span>
-                            </span>
-                        </li>
-                        <% end %>
-                        <li class="flex items-center py-3">
-                            <span>Chegou em</span>
-                            <span class="ml-auto"><%= @animal.created_at.strftime("%d/%m/%Y") %></span>
-                        </li>
+                    <ul class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+
+                      <% if @animal.available? %>
+                          <li class="flex items-center py-3">
+                              <span>Status</span>
+                              <span class="ml-auto">
+                                  <span class="bg-green-500 py-1 px-2 rounded text-white text-sm">Disponível</span>
+                              </span>
+                          </li>
+                          <li class="flex items-center py-3">
+                              <span>Chegou em</span>
+                              <span class="ml-auto"><%= @animal.created_at.strftime("%d/%m/%Y") %></span>
+                          </li>
+                      <% else %>
+                          <li class="flex items-center py-3">
+                              <span>Status</span>
+                              <span class="ml-auto">
+                                  <span class="bg-red-500 py-1 px-2 rounded text-white text-sm">Adotado</span>
+                              </span>
+                          </li>
+                          <li class="flex items-center py-3">
+                              <span>Adotado em</span>
+                              <span class="ml-auto"><%= @animal.updated_at.strftime("%d/%m/%Y") %></span>
+                          </li>
+                      <% end %>
                     </ul>
                 </div>
             </div>

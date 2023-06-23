@@ -4,6 +4,7 @@ class Bank < ApplicationRecord
   enum category: { entrada: 1, saída: 2 }
 
   validates :title, :category, :amount, presence: true
+  validates :amount, length: { maximum: 7 }
 
 
   def self.balance

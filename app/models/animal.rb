@@ -3,7 +3,7 @@
 class Animal < ApplicationRecord
   include AASM
 
-  aasm do
+  aasm timestamps: true do
     state :available, initial: true
     state :unavailable
 
