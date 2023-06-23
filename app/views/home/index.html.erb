@@ -9,7 +9,7 @@
       </div>
       <%= link_to banks_path, class: "bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
         <h1 class="font-bold">Caixa</h1>
-        <p class="text-2xl font-bold"><%= number_to_currency(@total_amount, unit: 'R$', separator: ',', delimiter: '.', precision: 2) %></p>
+        <p class="text-2xl font-bold"><%= number_to_currency(@total_amount, unit: 'R$', separator: ',', delimiter: '.', precision: 2).to_s.truncate(10, omission: "...") %></p>
       <% end %>
       <div class="bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
         <h1>Doentes</h1>
