@@ -22,7 +22,6 @@ class BanksController < ApplicationController
     @bank = Bank.new(bank_params)
 
     if @bank.save
-      @total_amount = @bank.calculate_total_amount
       redirect_to banks_path, notice: 'Transação adicionada com sucesso.'
     else
       render :new, status: :unprocessable_entity
