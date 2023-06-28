@@ -2,26 +2,10 @@
   <div class="bg-white rounded-3xl p-8 mb-5">
     <h1 class="text-3xl font-bold mb-10">Bem vindo, <%= current_user.name %></h1>
     <hr class="my-10">
-    <div class="flex space-x-5 items-center justify-center">
-      <div class="bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
-        <h1>Residentes</h1>
-        <p class="text-2xl font-bold"><%= Animal.count %></p>
-      </div>
-      <%= link_to banks_path, class: "bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
-        <h1 class="font-bold">Caixa</h1>
-        <p class="text-2xl font-bold"><%= number_to_currency(@total_amount, unit: 'R$', separator: ',', delimiter: '.', precision: 2).to_s.truncate(12, omission: "...") %></p>
-      <% end %>
-      <div class="bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
-        <h1>Doentes</h1>
-        <p class="text-2xl font-bold"><%= Animal.where(sick: "doente").count %></p>
-      </div>
-      <%= link_to contacts_path, class: "bg-red-100 w-1/6 text-center rounded-lg h-full p-2 py-9 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
-        <h1 class="font-bold">Agenda</h1>
-      <% end %>
-    </div>
+      <%= render 'cards' %>
     <hr class="my-10">
-    <div class="grid grid-cols-2 gap-4">
-      <div class=" h-full rounded-lg ">
+    <div class="grid grid-col gap-4 md:flex hidden md:block">
+      <div class="w-1/2">
         <% if @recents.blank? %>
           <%= render 'moneytab' %>
           <p class="text-center text-gray-400 mt-4">Nenhum dado por enquanto.</p>
@@ -29,13 +13,13 @@
           <%= render 'moneytab' %>
         <% end %>
       </div>
-       <div class="h-full rounded-lg">
-          <% if @recent_adoptions.blank? %>
-            <%= render 'recent_adoptions' %>
-            <p class="text-center text-gray-400 mt-4">Nenhum dado por enquanto.</p>
-          <% else %>
-            <%= render 'recent_adoptions' %>
-          <% end %>
+      <div class="w-1/2">
+        <% if @recent_adoptions.blank? %>
+          <%= render 'recent_adoptions' %>
+          <p class="text-center text-gray-400 mt-4">Nenhum dado por enquanto.</p>
+        <% else %>
+          <%= render 'recent_adoptions' %>
+        <% end %>
       </div>
     </div>
   </div>

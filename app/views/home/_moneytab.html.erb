@@ -1,4 +1,4 @@
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="relative w-full overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
         <caption class="p-5 text-lg font-semibold text-gray-900 bg-white text-center">
             Fluxo de caixa
@@ -6,45 +6,45 @@
         </caption>
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Titulo
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Tipo
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="hidden md:block px-4 py-3">
                     Data
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     Quantia
                 </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Editar</span>
+                <th scope="col" class="px-4 py-3">
+                  <span class="sr-only">Editar</span>
                 </th>
             </tr>
         </thead>
         <tbody>
             <% @recents.each do |bank| %>
                 <tr class="bg-white border-b">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <th scope="row" class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
                         <%= bank.title %>
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-2 md:py-4">
                         <%= bank.category.humanize.capitalize %>
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-2 md:py-4 hidden md:block">
                     <%= bank.created_at.strftime("%d/%m/%Y") %>
                     </td>
                     <% if bank.category == 'entrada' %>
-                        <td class="px-6 py-4 text-green-500">
+                        <td class="px-6 py-2 md:py-4 text-xs md:text-sm text-green-500">
                             + <%= number_to_currency(bank.amount) %>
                         </td>
                     <% else %>
-                        <td class="px-6 py-4 text-red-500">
+                        <td class="px-6 py-2 md:py-4 text-red-500">
                             - <%= number_to_currency(bank.amount) %>
                         </td>
                     <% end %>
-                    <td class="px-6 py-4 text-right">
+                    <td class="px-6 py-2 md:py-4 text-right">
                     <%= link_to edit_bank_path(bank), class: 'font-semibold text-black hover:text-gray-700 hover:underline' do %>
                       Atualizar
                     <% end %>
