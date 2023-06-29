@@ -2,7 +2,7 @@
  <div class="w-full text-white bg-main-color">
     <div class="container mx-auto my-5 p-5">
         <div class="md:flex no-wrap md:-mx-2 ">
-            <div class="w-full md:w-3/12 md:mx-2">
+            <div class="w-full md:w-3/12 md:mx-2 mb-2 ml-2">
                 <div class="bg-white p-3 border-t-4 border-green-400">
                     <div class="image overflow-hidden text-black">
                         <% if @animal.photo.present? %>
@@ -45,9 +45,9 @@
             <div class="w-full md:w-9/12 mx-2 h-64">
                 <div class="bg-white p-3 shadow-sm rounded-sm">
                     <div class="flex justify-between items-center space-x-2 font-semibold text-gray-900 leading-8">
-                      <span class="tracking-wide ml-4">Sobre 🐕</span>
+                      <span class="tracking-wide ml-4 text-sm md:text-md">Sobre 🐕</span>
                       <div class="flex items-center space-x-2">
-                      <%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
+                      <%= link_to "Alterar dados", edit_animal_path, class: "text-xs p-1.5 md:p-2 bg-black text-white rounded-lg text-center" %>
                       <% if @animal.available? %>
                         <%= button_to "Adicionar adoção", adoption_animal_path(@animal), method: :patch, class: "text-xs p-2 bg-black text-white rounded-lg" %>
                       <% end %>
@@ -75,33 +75,33 @@
                     </div>
                 </div>
                 <div class="my-4"></div>
-                <div class="bg-white p-3 shadow-sm rounded-sm">
+                <div class="bg-white p-3 shadow-sm rounded-sm mb-2">
                     <div class="grid grid-cols-2">
                         <div>
-                            <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                                <span class="tracking-wide">Medicamentos 💉</span>
-                            </div>
-                            <ul class="list-inside space-y-2">
-                                <li>
-                                    <div class="text-gray-500 text-sm"><%= simple_format(@animal.medicament) %></div>
-                                </li>
-                            </ul>
+                          <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                              <span class="tracking-wide">Medicamentos 💉</span>
+                          </div>
+                          <ul class="list-inside space-y-2">
+                            <li>
+                                <div class="text-gray-500 text-sm"><%= simple_format(@animal.medicament) %></div>
+                            </li>
+                          </ul>
                         </div>
                         <div>
-                            <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                              <span class="tracking-wide">Observações 📔</span>
-                            </div>
-                            <ul class="list-inside space-y-2">
-                              <% if @animal.comment.present? %>
+                          <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                            <span class="tracking-wide">Observações 📔</span>
+                          </div>
+                          <ul class="list-inside space-y-2">
+                            <% if @animal.comment.present? %>
+                              <li>
+                                <div class="text-gray-500 text-sm"><%= simple_format(@animal.comment) %></div>
+                              </li>
+                              <% else %>
                                 <li>
-                                  <div class="text-gray-500 text-sm"><%= simple_format(@animal.comment) %></div>
-                                </li>
-                                <% else %>
-                                  <li>
-                                    <div class="text-gray-400">Nenhuma observação.</div>
-                                </li>
-                              <% end %>
-                            </ul>
+                                  <div class="text-gray-400">Nenhuma observação.</div>
+                              </li>
+                            <% end %>
+                          </ul>
                         </div>
                     </div>
                 </div>
