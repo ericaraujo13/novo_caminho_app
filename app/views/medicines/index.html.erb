@@ -17,7 +17,7 @@
     </div>
   </div>
   <%= render 'table' %>
-  <div class="md:hidden">
-    <%= paginate @medicines %>
+  <div class="md:hidden flex justify-center">
+    <%= paginate @medicines, window: 1 %>
   </div>
 </div>

@@ -11,5 +11,5 @@
   <%= render 'adoption_list' %>
 </div>
 <div class="flex justify-center md:hidden">
-  <%= paginate @animals_available %>
+  <%= paginate @animals_available, window: 1 %>
 </div>
