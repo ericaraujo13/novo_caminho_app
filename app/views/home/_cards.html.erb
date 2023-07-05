@@ -1,0 +1,17 @@
+<div class="flex flex-col md:flex-row space-x-5 items-center justify-center space-y-4">
+  <div class="bg-red-100 w-full md:w-1/6 text-center md:mt-4 rounded-lg ml-4 h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
+    <h1>Residentes</h1>
+    <p class="text-2xl font-bold"><%= Animal.count %></p>
+  </div>
+    <%= link_to banks_path, class: "bg-red-100 w-full md:w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
+      <h1 class="font-bold">Caixa</h1>
+      <p class="text-2xl font-bold"><%= number_to_currency(@total_amount, unit: 'R$', separator: ',', delimiter: '.', precision: 2).to_s.truncate(12, omission: "...") %></p>
+    <% end %>
+    <div class="bg-red-100 w-full md:w-1/6 text-center rounded-lg h-full p-2 py-5 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300">
+      <h1>Doentes</h1>
+      <p class="text-2xl font-bold"><%= Animal.where(sick: "doente").count %></p>
+    </div>
+    <%= link_to contacts_path, class: "bg-red-100 w-full md:w-1/6 text-center rounded-lg h-full p-2 py-8 md:py-9 shadow-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300" do %>
+      <h1 class="font-bold">Agenda</h1>
+    <% end %>
+</div>

@@ -26,7 +26,7 @@
   }
 
   .button-primary {
-    @apply justify-center bg-black text-white p-2 rounded-lg font-semibold text-sm mt-2 hover:bg-gray-900
+    @apply justify-center bg-black text-white p-2 rounded-lg font-semibold text-sm hover:bg-gray-900
   }
 
   .button-secondary {

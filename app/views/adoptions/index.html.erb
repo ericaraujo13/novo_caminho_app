@@ -1,12 +1,15 @@
 <div class="flex justify-between bg-white items-center rounded-lg p-4 mb-4">
   <div>
-    <h1 class="text-4xl font-bold ">🐕 Animais disponíveis para adoção 🧍</h1>
+    <h1 class="text-xl md:text-4xl font-bold text-center">🐕 Animais disponíveis para adoção 🧍</h1>
   </div>
-    <div class="flex h-12 items-center">
-      <%= paginate @animals_available %>
+  <div class="flex h-auto items-center hidden md:block">
+    <%= paginate @animals_available %>
   </div>
 </div>
 
 <div>
   <%= render 'adoption_list' %>
+</div>
+<div class="flex justify-center md:hidden">
+  <%= paginate @animals_available, window: 1 %>
 </div>

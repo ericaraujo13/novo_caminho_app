@@ -1,1 +1,5 @@
-<%= link_to_unless current_page.first?, t('views.pagination.previous').html_safe, url, rel: 'prev', remote: remote, class: "bg-white hover:bg-gray-100 text-gray-800 font-light py-2 px-4 border border-gray-400 rounded shadow" %>
+<%= link_to_unless current_page.first?,
+ 'Anterior', url,
+  rel: 'prev', remote: remote,
+   class: "bg-black text-white font-semibold hover:bg-gray-800  py-1 px-1.5 text-sm border
+           border-black rounded-lg" %>
