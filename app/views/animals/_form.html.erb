@@ -36,21 +36,14 @@
                           class: 'input-form' %>
 
 
-      <div class="mx-auto p-8 md:hidden">
-        <h1 class="text-center text-gray-700 font-bold text-xl mb-2">Foto selecionada</h1>
-        <div data-controller="image-preview">
-          <%= image_tag('cachorro-sem-foto.png', class: "w-full md:h-96 rounded-lg", data: { target: "image-preview.output" }) %>
-        </div>
-      </div>
-
         <%= f.label :photo, "Adicione uma foto", class: "md:text-left text-center block text-sm font-medium mb-2 ml-1 text-gray-700"%>
         <%= f.file_field :photo, class:"mr-auto border border-gray-300 rounded-lg p-2 w-full mb-2", data: { target: "image-preview.input", action: "image-preview#readURL" } %>
     </div>
 
     <div class="mx-auto p-8 hidden md:block">
       <h1 class="text-center text-gray-700 font-bold text-xl mb-2">Foto selecionada</h1>
-      <div data-controller="image-preview-2">
-        <%= image_tag('cachorro-sem-foto.png', class: "w-full md:h-96 rounded-lg", data: { target: "image-preview-2.output" }) %>
+      <div data-controller="image-preview">
+        <%= image_tag('cachorro-sem-foto.png', class: "w-full md:h-96 rounded-lg", data: { target: "image-preview.output" }) %>
       </div>
     </div>
   </div>
@@ -71,8 +64,6 @@
   document.addEventListener("DOMContentLoaded", function() {
     const input = document.querySelector("[data-target='image-preview.input']");
     const img = document.querySelector("[data-target='image-preview.output']");
-    const input2 = document.querySelector("[data-target='image-preview-2.input']");
-    const img2 = document.querySelector("[data-target='image-preview-2.output']");
 
     input.addEventListener("change", function() {
       if (this.files && this.files[0]) {
