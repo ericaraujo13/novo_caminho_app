@@ -1,9 +1,5 @@
-<div class="bg-red-600  h-36 rounded-lg">
-  <div class="px-20 py-5 items-center flex justify-between xl:justify-center text-center">
-    <div class="my-8">
-      <h2 class="text-4xl text-white font-site">Aqui estão os animais disponiveis para adoção</h2>
-    </div>
-  </div>
+<div class="bg-red-600 h-36 rounded-lg flex justify-center">
+  <h2 class="md:text-4xl text-2xl text-center px-2 text-white font-site my-auto">Aqui estão os animais disponiveis para adoção</h2>
 </div>
 
 <div>
@@ -37,7 +33,7 @@
       </div>
     <% end %>
   </div>
-  <div class="flex justify-center ">
-    <%= paginate @animals_available, window: 5 %>
+  <div class="flex justify-center">
+    <%= paginate @animals_available, window: 2 %>
   </div>
 </div>
