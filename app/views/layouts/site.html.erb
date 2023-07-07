@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ONG - Novo Caminho</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-white">
+    <%= render 'shared/site-navbar' %>
+    <section class="w-full background-radial-gradient mb-4 lg:text-left">
+      <div class="relative overflow-hidden bg-center bg-cover bg-no-repeat bg-[100%] bg-site h-[550px] xl:h-[650px]">
+        <div
+          class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.35)] bg-fixed">
+          <div class="flex h-full items-center">
+            <div class="xl:px-36 px-6 py-6 text-intial text-white md:py-0">
+              <h2 class="font-site mt-40 mb-auto text-1xl leading-tight tracking-tight md:text-6xl xl:text-7xl">
+                Preparado <br> para adotar um Pet?</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative mt-[-50px]">
+        <%= yield %>
+      </div>
+    </section>
+ </body>
+</html>

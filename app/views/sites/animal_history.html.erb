@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ONG - Novo Caminho</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-white">
+    <%= render 'shared/site-navbar' %>
+    <div class="container mx-auto p-32">
+      <%= link_to 'Voltar', sites_path, class: "rounded-full py-6 px-2.5 font-bold bg-black text-white" %>
+      <section class="text-center lg:text-left">
+        <div class=" md:px-6 md:px-12">
+          <div class="container mx-auto xl:px-32">
+            <div class="flex grid items-center lg:grid-cols-2">
+              <div class="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
+                <div
+                  class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[25px] dark:shadow-black/20 md:px-12 lg:-mr-14">
+                  <h2 class="mb-2 text-3xl font-bold text-primary">
+                    <%= @animal.name %>
+                  </h2>
+                  <p class="mb-4 font-semibold"><%= @animal.race %></p>
+                  <p class="mb-6 text-neutral-500">
+                    <%= @animal.description %>
+                  </p>
+                  <p class="mb-6 text-neutral-500">
+                    Ad, at blanditiis quaerat laborum officia incidunt
+                    cupiditate dignissimos voluptates eius aliquid minus
+                    praesentium! Perferendis et totam ipsum ex aut earum libero
+                    accusamus voluptas quod numquam saepe, consequuntur nihil
+                    quia tenetur consequatur. Quis, explicabo deserunt quasi
+                    assumenda ea maiores nulla, et dolor saepe praesentium natus
+                    error reiciendis voluptas iste. Esse, laudantium ipsum
+                    animi, quos voluptatibus atque vero repellat sit eligendi
+                    autem maiores quasi cum aperiam. Aperiam rerum culpa
+                    accusantium, ducimus deserunt aliquid alias vitae quasi
+                    corporis placeat vel maiores explicabo commodi!
+                  </p>
+                </div>
+              </div>
+              <div class="md:mb-12 lg:mb-0">
+                <% if @animal.photo.present? %>
+                  <% ActiveStorage::Current.url_options = { host: request.base_url } %>
+                  <%= image_tag @animal.photo.url, class: "lg:rotate-[6deg] w-full rounded-lg shadow-lg dark:shadow-black/20" %>
+                <% else %>
+                  <%= image_tag("cachorro-sem-foto.png", class: "lg:rotate-[6deg] w-full rounded-lg shadow-lg dark:shadow-black/20") %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+ </body>
+</html>
