@@ -3,10 +3,16 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :users
-  root 'sites#index'
+
+  authenticated :user do
+    root 'home#index', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    root 'sites#index', as: :unauthenticated_root
+  end
 
   resources :banks
-
   resources :contacts
   resources :medicines
   resources :adoptions, only: :index
