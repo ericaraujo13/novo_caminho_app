@@ -1,3 +1,11 @@
 .bg-login {
   background-image: url("login-photo.jpg");
 }
+
+.bg-site {
+  background-image: url("dog.jpg");
+}
+
+.font-site {
+  font-family: 'Caprasimo'
+}
