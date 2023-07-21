@@ -3,7 +3,7 @@
     <div class="container mx-auto my-5 p-5">
       <div class="md:flex no-wrap md:-mx-2 ">
         <div class="w-full md:w-3/12 md:mx-2">
-          <div class="bg-white p-3 border-t-4 border-green-400">
+          <div class="bg-white p-3 border-t-4 border-green-400 mb-4">
             <div class="image overflow-hidden text-black">
                 <%= image_tag("user.png") %>
             </div>
@@ -20,14 +20,14 @@
         <div class="w-full md:w-9/12 mx-2 h-64">
           <div class="bg-white p-3 shadow-sm rounded-sm">
             <div class="flex justify-between items-center space-x-2 font-semibold text-gray-900 leading-8">
-              <span class="tracking-wide ml-4">Sobre</span>
+              <span class="tracking-wide ml-4 mb-2">Sobre</span>
               <div>
                 <%= link_to "Alterar dados", edit_contact_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
                 <%= link_to "Voltar", contacts_path, class: "text-xs p-2 bg-black text-white rounded-lg" %>
               </div>
             </div>
             <div class="text-gray-700 text-sm">
-              <div class="flex">
+              <div class="flex-col space-y-3">
                   <div>
                       <div class="px-4  font-semibold">Nome:</div>
                       <div class="px-4"><%= @contact.first_name.humanize.capitalize %></div>
