@@ -25,17 +25,20 @@
             <div class="flex grid items-center lg:grid-cols-2">
               <div class="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
                 <div
-                  class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[25px] dark:shadow-black/20 md:px-12 lg:-mr-14">
+                  class="relative z-[1] block rounded-lg bg-black text-white px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[25px] dark:shadow-black/20 md:px-12 lg:-mr-14">
                   <h2 class="mb-2 text-3xl font-bold text-primary">
                     <%= @animal.name %>
                   </h2>
                   <p class="mb-4 font-semibold"><%= @animal.race %></p>
-                  <p class="mb-6 text-neutral-500">
+                  <p class="mb-6 text-white">
                     <%= @animal.description %>
                   </p>
-                  <p class="mb-6 text-neutral-500">
-                    <%= @animal.history %>
-                  </p>
+                  <% if @animal.history.present? %>
+                    <p class="mb-6 text-white">
+                      <p class="mb-2">História: </p>
+                      <%= @animal.history %>
+                    </p>
+                  <% end %>
                 </div>
               </div>
               <div class="md:mb-12 lg:mb-0">
@@ -45,6 +48,12 @@
                 <% else %>
                   <%= image_tag("cachorro-sem-foto.png", class: "lg:rotate-[6deg] w-full rounded-lg shadow-lg dark:shadow-black/20") %>
                 <% end %>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="mt-6 rounded-lg bg-white shadow-2xl p-4 w-2/3 justify-center text-center">
+                <h1 class="text-xl mb-6 mx-auto flex justify-center">Clique aqui para mandar uma mensagem e me adotar!</h1>
+                <a href="https://www.instagram.com/direct/t/105792594149632" class="bg-red-500 hover:bg-red-400 font-bold text-white p-6 rounded-lg shadow-lg flex mx-auto justify-center w-2/4">Enviar mensagem</a>
               </div>
             </div>
           </div>
