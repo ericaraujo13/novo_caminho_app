@@ -42,7 +42,6 @@ RUN bundle install && \
 # Install node modules
 COPY --link package.json package-lock.json ./
 RUN npm install
-RUN npm install mjml
 
 # Copy application code
 COPY --link . .
