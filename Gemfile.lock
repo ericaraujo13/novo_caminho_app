@@ -146,7 +146,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
-    mjml-rails (4.9.0)
     msgpack (1.7.1)
     net-imap (0.3.4)
       date
@@ -274,7 +273,6 @@ DEPENDENCIES
   jbuilder
   kaminari
   letter_opener_web (~> 2.0)
-  mjml-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)
