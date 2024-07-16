@@ -24,8 +24,6 @@ Abra um pull request no repositório original.
 
 ## Screenshots
 
-Inclua aqui algumas screenshots do seu projeto para visualização.
-
 ### Tela de Login
 
 ![Tela de login](screenshots/tela-login-admin.png)
